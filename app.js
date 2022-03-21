@@ -30,11 +30,25 @@ var xWins = 0;
 var oWins = 0;
 var draws = 0;
 
+//Pull wins/draws from localStorage and set text to corresponding values
+function initialize()
+{
+    xWins = window.sessionStorage.getItem('xWins');
+    oWins = window.sessionStorage.getItem('oWins');
+    draws = window.sessionStorage.getItem('draws');
+    if(xWins == null) { xWins = 0; }
+    if(oWins == null) { oWins = 0; }
+    if(draws == null) { draws = 0; }
+    document.getElementById('numXWins').innerHTML = "X WINS: " +xWins;
+    document.getElementById('numOWins').innerHTML = "O WINS: " +oWins;
+    document.getElementById('numDraws').innerHTML = "DRAWS: " +draws;
+}
+
 //Each time someone makes a play, adjust the board and check for a victor with checkWin
 function play(cell) 
 {
     click.play();
-    //Pull game board index from value of table cell clicked
+    //Pull game board index from class of table cell clicked
     cell.value = turn;
     const index = cell.className;
     const parse = index.split(",")
@@ -79,6 +93,7 @@ function checkWin(arr)
         buttons.forEach(btn => btn.disabled=true);
         capText.innerHTML = "X is the winner!!!";
         xWins++;
+        window.sessionStorage.setItem('xWins', xWins);
         document.getElementById('numXWins').innerHTML = "X WINS: " +xWins;
         win.play();
         
@@ -88,6 +103,7 @@ function checkWin(arr)
         buttons.forEach(btn => btn.disabled=true);
         capText.innerHTML = "O is the winner!!!";
         oWins++;
+        window.sessionStorage.setItem('oWins', oWins);
         document.getElementById('numOWins').innerHTML = "O WINS: " +oWins;
         win.play();
     }
@@ -97,10 +113,12 @@ function checkWin(arr)
         buttons.forEach(btn => btn.disabled=true);
         capText.innerHTML = "It's a draw :(";
         draws++;
+        window.sessionStorage.setItem('draws', draws);
         document.getElementById('numDraws').innerHTML = "DRAWS: " +draws;
         draw.play();
         buttons.forEach(btn => {
             btn.style["background-color"] = '#3f3f3f';
+            //Reset style so it doesn't permanantly stay at #3f3f3f
             btn.style["background-color"] = '';
         }); 
     }    
@@ -118,6 +136,7 @@ function rematch()
         btn.value="   ";
         btn.style["background-color"] = '#F0F0F0';
         btn.disabled=false;
+        //Reset style so it doesn't permanantly stay at #F0F0F0
         btn.style["background-color"] = '';
     });       
 }
