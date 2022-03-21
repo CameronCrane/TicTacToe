@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab|Oswald|Roboto+Slab&display=swap');
+
+body {
+    background-image:url(Images/wood-bg.jpeg);
+    color: white;
+}
+h3 {
+  text-align:center;
+  font-size: 70px;
+  color: white;
+  font-family: 'roboto slab';
+  margin-bottom:25px;
+  margin-top: 15px;;
+}
+p {
+  text-align: center;
+  width: 500px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: -10%;
+  font-family: 'hepta slab';
+  font-size: 18px;
+}
+#rules {
+  width: 500px;
+  background-color: rgb(41, 41, 41);
+  opacity: 0.75;
+  padding: 15px;
+}
+
+#scoreboard {
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  font-family: 'roboto slab';
+  font-size: 20px;  
+}
+#scoreboard td {
+  width: 33%;
+}
+#gameboard {
+    text-align: center;
+    width: 490px;
+    height: 490px;
+    margin: auto;
+    border-collapse:collapse;
+}
+#gameboard td {
+    width: 33%;
+    height: 33%;
+    border: 10px solid rgb(0, 0, 0);
+    font-size: 100px;
+    border-collapse:collapse;
+    padding:0px;
+}
+#gameboard input {
+    background-color: #F0F0F0 ;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    border: none;
+    padding:none;
+    font-family: 'roboto slab';
+    font-weight:bold;
+    padding:0px;
+}
+
+#gameboard input:hover {
+    background-color: #bdbdbd ;
+    color:rgb(0, 0, 0);
+    border: none;
+    padding:0px;
+}
+  
+#gameboard input:disabled, input[disabled] {
+    background-color: #3f3f3f;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding:0px;
+}
+
+#caption {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#rematch {
+  display: block;
+  width: 200px;
+  height:50px;
+  font-size: 25px;
+  margin: auto;
+  font-family: 'hepta slab';
+  border-radius:10px;
+  box-shadow:5px 5px 5px #000000;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js" defer></script>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+</head> 
+<body>
+    <h3>Tic Tac Toe</h3>
+    <p id="rules">Rules: One player chooses X's, the other chooses O's. Take turns drawing your symbols onto a square. The first to get three in a row wins!</p>    
+    <table id="scoreboard">
+        <tr>
+            <td id="numXWins">X WINS: 0</td>
+            <td id="numOWins">O WINS: 0</td>
+            <td id="numDraws">DRAWS: 0</td>
+        </tr>
+    </table>
+    <br>
+    <table id="gameboard">
+        <tr>
+            <td><input type="button" name="gamecell" value="   " class="0,0" onclick="play(this);"></td>
+            <td><input type="button" name="gamecell" value="   " class="0,1" onclick="play(this);"></td>
+            <td><input type="button" name="gamecell" value="   " class="0,2" onclick="play(this);"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="gamecell" value="   " class="1,0" onclick="play(this);"></td>
+            <td><input type="button" name="gamecell" value="   " class="1,1" onclick="play(this);"></td>
+            <td><input type="button" name="gamecell" value="   " class="1,2" onclick="play(this);"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="gamecell" value="   " class="2,0" onclick="play(this);"></td>
+            <td><input type="button" name="gamecell" value="   " class="2,1" onclick="play(this);"></td>
+            <td><input type="button" name="gamecell" value="   " class="2,2" onclick="play(this);"></td>
+        </tr>
+    </table>
+    <p id="caption" value="Current Turn: X">Current Turn: X</p>
+    <input type="button" id="rematch" value="Rematch?" onclick="rematch();">
+</body>
+</html>
